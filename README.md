@@ -2,7 +2,7 @@
 
 Lead-generation website for **JP Fitness**, a unisex gym in Kalapatti, Coimbatore, Tamil Nadu. Rated 5.0 on Google (21 reviews). Every page drives one of three actions: **call**, **WhatsApp**, or **walk in**.
 
-- **Live:** https://jpfitness.netlify.app
+- **Live:** https://jpfitnesskalapatti.netlify.app (jpfitness.netlify.app was already taken by another Netlify account)
 - **Spec:** [JP-FITNESS-SPEC.md](./JP-FITNESS-SPEC.md) (single source of truth for requirements)
 
 ## Stack

@@ -17,7 +17,7 @@ import type { LucideIcon } from "lucide-react";
  */
 
 /** Replace with the custom domain once purchased (see README, open item 9). */
-export const SITE_URL = "https://jpfitness.netlify.app";
+export const SITE_URL = "https://jpfitnesskalapatti.netlify.app";
 
 export const business = {
   name: "JP Fitness",
