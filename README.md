@@ -56,7 +56,7 @@ Still placeholders (visible TODO tags on site): trainer photos, founder photo, a
 4. Trainer names, photos, specialisations (6+); confirm "John" spelling
 5. Verbatim Google review texts + reviewer first names
 6. Written member consent on file for the published transformation photos
-7. Founder name, bio, competition history (Achievements page)
+7. Years for the founder's competition wins (timeline markers; titles + medals already live)
 8. Domain decision (suggest jpfitnesskalapatti.com or jpfitness.in) → update `SITE_URL`
 9. iOS App Store link, if one exists
 10. App phone mockup screenshot for the app section

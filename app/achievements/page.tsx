@@ -1,21 +1,34 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Award, Star } from "lucide-react";
+import Image from "next/image";
+import { Award, Star, Trophy } from "lucide-react";
 import PageHero from "@/components/PageHero";
-import PlaceholderImage from "@/components/PlaceholderImage";
 import SectionHeader from "@/components/SectionHeader";
 import Reveal from "@/components/Reveal";
 import CtaBand from "@/components/CtaBand";
 import Slashed from "@/components/Slashed";
 import TodoTag from "@/components/TodoTag";
-import { achievementsTimeline, business } from "@/lib/data";
+import InstagramIcon from "@/components/InstagramIcon";
+import {
+  achievementsTimeline,
+  business,
+  founder,
+  founderMedalTotal,
+  type MedalCount,
+} from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Our Achievements & Trainers | JP Fitness Kalapatti",
   description:
-    "Meet the certified trainers and competitive bodybuilding background behind JP Fitness, a 5.0-rated unisex gym in Kalapatti, Coimbatore.",
+    "Meet Jaya Prakash, the competitive bodybuilder behind JP Fitness, with 17 podium finishes from Mr. Tirupur to Asian Powerlifting. A 5.0-rated unisex gym in Kalapatti, Coimbatore.",
   alternates: { canonical: "/achievements/" },
 };
+
+const medalStyles: { key: keyof MedalCount; label: string; dot: string }[] = [
+  { key: "gold", label: "Gold", dot: "bg-[#E3B341]" },
+  { key: "silver", label: "Silver", dot: "bg-[#C0C7D1]" },
+  { key: "bronze", label: "Bronze", dot: "bg-[#C9824E]" },
+];
 
 export default function AchievementsPage() {
   return (
@@ -33,27 +46,87 @@ export default function AchievementsPage() {
       {/* Founder block */}
       <section>
         <div className="container-jp py-16 md:py-24">
-          <div className="grid gap-10 md:grid-cols-[minmax(0,320px)_1fr] md:items-start">
-            <PlaceholderImage
-              label="Photo: founder (TODO from client, 800x1000)"
-              className="aspect-[4/5] w-full max-w-xs"
-            />
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,420px)_1fr] lg:items-start">
+            <Reveal>
+              <div className="overflow-hidden rounded-lg border border-line">
+                <Image
+                  src={founder.photo.src}
+                  alt={founder.photo.alt}
+                  width={founder.photo.width}
+                  height={founder.photo.height}
+                  sizes="(min-width: 1024px) 420px, 92vw"
+                  className="h-auto w-full"
+                />
+              </div>
+              <p className="mt-3 text-xs text-muted">
+                {founder.name}, known on stage as {founder.nickname}.
+              </p>
+            </Reveal>
+
             <div>
               <Reveal>
                 <SectionHeader
                   eyebrow="The founder"
-                  title="RUN BY A COMPETITIVE BODYBUILDER"
-                  sub="JP Fitness is run by a competitive bodybuilder who brings contest-level discipline to everyday coaching, supported by 6+ certified trainers."
+                  title={
+                    <>
+                      THE <Slashed>JP</Slashed> IN JP FITNESS
+                    </>
+                  }
+                  sub={founder.bio}
                 />
               </Reveal>
-              <div className="mt-6">
-                <TodoTag note="Founder name, titles and competition history come from the client (open item 7)." />
-              </div>
-              <div className="mt-8">
-                <Link href="/success-stories" className="btn-outline">
-                  See real member transformations
-                </Link>
-              </div>
+
+              <Reveal delay={0.05}>
+                <div className="mt-8 flex items-center gap-4 rounded-lg border border-line bg-surface p-5">
+                  <Trophy className="h-8 w-8 shrink-0 text-brand" aria-hidden="true" />
+                  <div>
+                    <p className="display-heading text-2xl text-white">
+                      {founderMedalTotal} podium finishes
+                    </p>
+                    <p className="mt-1 text-sm text-muted-bright">
+                      Across powerlifting and bodybuilding, from the district stage to the Asian level.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                  {founder.titles.map((entry) => (
+                    <div key={entry.title} className="rounded-lg border border-line bg-surface p-5">
+                      <h3 className="display-heading text-lg text-white">{entry.title}</h3>
+                      <div className="mt-3 flex flex-wrap gap-2">
+                        {medalStyles.map(({ key, label, dot }) => {
+                          const count = entry.medals[key];
+                          if (!count) return null;
+                          return (
+                            <span
+                              key={key}
+                              className="inline-flex items-center gap-1.5 rounded-full border border-line px-2.5 py-1 text-xs font-semibold text-muted-bright"
+                            >
+                              <span className={`h-2 w-2 rounded-full ${dot}`} aria-hidden="true" />
+                              {count} {label}
+                            </span>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <a
+                    href={founder.instagramUrl}
+                    target="_blank"
+                    rel="noopener"
+                    className="btn-outline"
+                  >
+                    <InstagramIcon className="h-4 w-4" />
+                    Follow {founder.nickname}: {founder.instagramHandle}
+                  </a>
+                  <Link href="/success-stories" className="btn-outline">
+                    See member transformations
+                  </Link>
+                </div>
+              </Reveal>
             </div>
           </div>
         </div>

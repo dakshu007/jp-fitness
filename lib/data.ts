@@ -355,6 +355,47 @@ export const heroPhoto: Photo = {
   alt: "Training floor with red LED lighting and turf strip at JP Fitness gym in Kalapatti, Coimbatore",
 };
 
+export interface MedalCount {
+  gold?: number;
+  silver?: number;
+  bronze?: number;
+}
+
+export interface FounderTitle {
+  title: string;
+  medals: MedalCount;
+}
+
+/** Founder details and competition record, supplied by the client on 12 June 2026. */
+export const founder = {
+  name: "Jaya Prakash",
+  nickname: "JP",
+  /** He is the JP behind the gym's name. */
+  bio: "JP Fitness is founded and run by Jaya Prakash, the JP behind the name. A competitive bodybuilder and powerlifter with podium finishes from the district stage to the Asian level, he coaches members with the same discipline he brings to competition.",
+  instagramUrl: "https://www.instagram.com/jayaprakashanimal/",
+  instagramHandle: "@jayaprakashanimal",
+  photo: {
+    id: "founder",
+    src: "/images/founder.webp",
+    width: 900,
+    height: 889,
+    alt: "Jaya Prakash, founder of JP Fitness, posing on stage at a bodybuilding competition with trophies",
+  } satisfies Photo,
+  titles: [
+    { title: "Asian Powerlifting", medals: { silver: 1 } },
+    { title: "Mr. South India", medals: { silver: 1 } },
+    { title: "Mr. Tamilnadu", medals: { gold: 3, silver: 3, bronze: 3 } },
+    { title: "Mr. Tirupur", medals: { gold: 5 } },
+    { title: "Mr. Ironman", medals: { gold: 1 } },
+  ] as FounderTitle[],
+} as const;
+
+/** Total podium finishes across all of the founder's titles. */
+export const founderMedalTotal = founder.titles.reduce(
+  (sum, t) => sum + (t.medals.gold ?? 0) + (t.medals.silver ?? 0) + (t.medals.bronze ?? 0),
+  0
+);
+
 /** Screenshot of the JP Fitness app home screen (client-supplied). */
 export const appMockup: Photo = {
   id: "app-mockup",
@@ -430,10 +471,11 @@ export const achievementsTimeline: TimelineEntry[] = [
     todo: true,
   },
   {
-    marker: "TODO: year",
-    title: "Competition history",
-    detail: "TODO: contests entered and placements, from client.",
-    todo: true,
+    marker: "On stage",
+    title: "Seventeen podium finishes",
+    detail:
+      "Founder Jaya Prakash collects medals across Asian Powerlifting, Mr. South India, Mr. Tamilnadu, Mr. Tirupur and Mr. Ironman. TODO: years of each win from client.",
+    todo: false,
   },
   {
     marker: "28 June 2026",
