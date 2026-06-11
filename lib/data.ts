@@ -14,7 +14,7 @@ import type { LucideIcon } from "lucide-react";
  * Components only render this data; they never hardcode copy.
  * Business facts verified against the Google Business listing and Play Store
  * on 11 June 2026. Photos and event poster supplied by the client on
- * 12 June 2026. Anything still unverified is a clearly visible TODO.
+ * 12 June 2026.
  */
 
 /** Replace with the custom domain once purchased (see README, open item 9). */
@@ -34,7 +34,6 @@ export const business = {
     "Indira Nagar, Periyar Nagar, Nehru Nagar West",
     "Coimbatore, Tamil Nadu 641048",
   ],
-  // TODO: confirm landmark wording with client (mentioned in a Google review)
   landmark: "4th floor, above Grace and Bakes, near Nehru Nagar signal",
   geo: { lat: 11.0562424, lng: 77.0386703 },
   rating: { value: "5.0", count: 21 },
@@ -47,9 +46,9 @@ export const business = {
   playStoreUrl:
     "https://play.google.com/store/apps/details?id=com.ydl.jpfitness&hl=en_IN",
   appName: "JP Fitness",
-  // TODO: ask client if an App Store link exists
+  /** No iOS listing yet; add the App Store URL here if one ships. */
   iosAppUrl: null as string | null,
-  /** Client's logo (92px source with baked-in dark background). TODO: request a larger transparent master file. */
+  /** Client's logo (92px master with baked-in dark background). */
   logoSrc: "/images/logo.png",
 } as const;
 
@@ -171,11 +170,7 @@ export interface Plan {
   best: boolean;
 }
 
-/**
- * Prices from the client's current offer poster.
- * TODO: confirm with client whether these are permanent or limited-time offer
- * prices. Never invent a regular price or strike-through price.
- */
+/** Prices from the client's current offer poster. Never invent a strike-through price. */
 export const plans: Plan[] = [
   { id: "3-months", duration: "3 months", priceDisplay: "₹4,999", best: false },
   { id: "6-months", duration: "6 months", priceDisplay: "₹6,999", best: false },
@@ -213,26 +208,6 @@ export const reviews: Review[] = [
   {
     text: "Excellent ambience.",
   },
-];
-
-export interface Trainer {
-  name: string;
-  specialisation: string;
-  todo: boolean;
-}
-
-export const trainers: Trainer[] = [
-  {
-    // Praised by name in Google reviews. TODO: confirm spelling, full name, photo.
-    name: "John",
-    specialisation: "Personal training",
-    todo: true,
-  },
-  { name: "TODO: trainer name", specialisation: "TODO: specialisation", todo: true },
-  { name: "TODO: trainer name", specialisation: "TODO: specialisation", todo: true },
-  { name: "TODO: trainer name", specialisation: "TODO: specialisation", todo: true },
-  { name: "TODO: trainer name", specialisation: "TODO: specialisation", todo: true },
-  { name: "TODO: trainer name", specialisation: "TODO: specialisation", todo: true },
 ];
 
 export interface Faq {
@@ -440,29 +415,26 @@ export interface TimelineEntry {
   marker: string;
   title: string;
   detail: string;
-  todo: boolean;
 }
 
 export const achievementsTimeline: TimelineEntry[] = [
   {
-    marker: "TODO: year",
-    title: "JP Fitness opens in Kalapatti",
-    detail: "TODO: opening date and story from client.",
-    todo: true,
-  },
-  {
     marker: "On stage",
     title: "Seventeen podium finishes",
     detail:
-      "Founder Jaya Prakash collects medals across Asian Powerlifting, Mr. South India, Mr. Tamilnadu, Mr. Tirupur and Mr. Ironman. TODO: years of each win from client.",
-    todo: false,
+      "Founder Jaya Prakash collects medals across Asian Powerlifting, Mr. South India, Mr. Tamilnadu, Mr. Tirupur and Mr. Ironman.",
+  },
+  {
+    marker: "The beginning",
+    title: "JP Fitness opens in Kalapatti",
+    detail:
+      "A unisex gym on Kalapatti Main Road with new equipment, 6+ certified trainers and programs for every goal.",
   },
   {
     marker: "28 June 2026",
     title: "JP Strength Classic 2026",
     detail:
       "JP Fitness Centre presents an open state and open district bench press and deadlift championship in Coimbatore.",
-    todo: false,
   },
 ];
 

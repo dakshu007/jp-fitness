@@ -41,7 +41,7 @@ Real client photos were imported on 12 June 2026 via `scripts/import-photos.mjs`
 - `public/images/transformations/*.webp` — 13 member before/after collages (**confirm written member consent is on file with the client**)
 - `public/images/events/jp-strength-classic-2026.webp` — championship poster
 
-Still placeholders (visible TODO tags on site): trainer photos, founder photo, app phone mockup.
+All visible placeholders and TODO tags have been removed from the site (client request, 12 June 2026). The home trainers strip and the achievements certification cards are hidden until the client supplies real trainer profiles and certification details; restore them from git history when the content arrives.
 
 ## ⚠️ Flags raised during the build (do not resolve silently)
 
@@ -53,13 +53,11 @@ Still placeholders (visible TODO tags on site): trainer photos, founder photo, a
 1. Larger transparent logo master (current file is 92px with a baked-in background; fine at navbar size, soft at 512px icon size)
 2. Confirm hours and update Google Business Profile (see flag above)
 3. Confirm whether plan prices are permanent or offer prices
-4. Trainer names, photos, specialisations (6+); confirm "John" spelling
-5. Verbatim Google review texts + reviewer first names
+4. Trainer names, photos, specialisations (6+) to restore the trainers strip; confirm "John" spelling
+5. Verbatim Google review texts (review cards currently show listing themes without names)
 6. Written member consent on file for the published transformation photos
 7. Years for the founder's competition wins (timeline markers; titles + medals already live)
 8. Domain decision (suggest jpfitnesskalapatti.com or jpfitness.in) → update `SITE_URL`
 9. iOS App Store link, if one exists
 10. App phone mockup screenshot for the app section
 11. Championship venue announcement → update `strengthClassic.venueNote` in `lib/data.ts`
-
-Everything awaiting client input is marked with a visible red **TODO** tag on the site itself.

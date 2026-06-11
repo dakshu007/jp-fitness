@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Award, Star, Trophy } from "lucide-react";
+import { Star, Trophy } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import SectionHeader from "@/components/SectionHeader";
 import Reveal from "@/components/Reveal";
 import CtaBand from "@/components/CtaBand";
 import Slashed from "@/components/Slashed";
-import TodoTag from "@/components/TodoTag";
 import InstagramIcon from "@/components/InstagramIcon";
 import {
   achievementsTimeline,
@@ -139,7 +138,7 @@ export default function AchievementsPage() {
             <SectionHeader
               eyebrow="Milestones"
               title="THE JOURNEY SO FAR"
-              sub="Each milestone is filled in as the client confirms dates and details. Nothing here gets invented."
+              sub="From the competition stage to a gym of our own in Kalapatti."
             />
           </Reveal>
           <ol className="relative mt-12 space-y-10 border-l border-line pl-8">
@@ -157,35 +156,6 @@ export default function AchievementsPage() {
               </li>
             ))}
           </ol>
-        </div>
-      </section>
-
-      {/* Trainer credentials */}
-      <section className="border-t border-line">
-        <div className="container-jp py-16 md:py-24">
-          <Reveal>
-            <SectionHeader
-              eyebrow="Credentials"
-              title="CERTIFIED TO COACH"
-              sub="Looking for a certified personal trainer in Coimbatore? Certification details for each JP Fitness trainer are being collected from the client."
-            />
-          </Reveal>
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {[1, 2, 3].map((n) => (
-              <div key={n} className="rounded-lg border border-line bg-surface p-6">
-                <Award className="h-6 w-6 text-brand" aria-hidden="true" />
-                <h3 className="display-heading mt-4 text-lg text-white">
-                  TODO: certification name
-                </h3>
-                <p className="mt-2 text-sm leading-[1.7] text-muted-bright">
-                  TODO: issuing body and trainer, from client.
-                </p>
-                <div className="mt-4">
-                  <TodoTag />
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 

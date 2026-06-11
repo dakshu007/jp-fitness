@@ -7,7 +7,6 @@ import CtaBand from "@/components/CtaBand";
 import Reveal from "@/components/Reveal";
 import SectionHeader from "@/components/SectionHeader";
 import Slashed from "@/components/Slashed";
-import TodoTag from "@/components/TodoTag";
 import { faqs, plans, waLink } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -52,9 +51,6 @@ export default function PricingPage() {
             {plans.map((plan) => (
               <PlanCard key={plan.id} plan={plan} large />
             ))}
-          </div>
-          <div className="mt-5">
-            <TodoTag note="Prices follow the client's current offer poster, labelled limited time. Confirm whether they are permanent before launch; never show an invented regular price." />
           </div>
         </div>
       </section>

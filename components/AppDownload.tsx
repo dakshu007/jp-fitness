@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Check } from "lucide-react";
 import { appBullets, appMockup, business } from "@/lib/data";
 import SectionEyebrow from "@/components/SectionEyebrow";
-import TodoTag from "@/components/TodoTag";
 import Reveal from "@/components/Reveal";
 
 export default function AppDownload() {
@@ -50,10 +49,7 @@ export default function AppDownload() {
                   />
                 </a>
               </div>
-              <p className="mt-4 text-xs text-muted">
-                {business.appName} on Android.{" "}
-                <TodoTag note="add the App Store link if one exists" />
-              </p>
+              <p className="mt-4 text-xs text-muted">{business.appName}, free on Android.</p>
             </div>
           </div>
         </Reveal>

@@ -8,13 +8,11 @@ import SectionHeader from "@/components/SectionHeader";
 import Reveal from "@/components/Reveal";
 import PlanCard from "@/components/PlanCard";
 import TestimonialCard from "@/components/TestimonialCard";
-import TrainerCard from "@/components/TrainerCard";
 import AppDownload from "@/components/AppDownload";
 import InstagramGrid from "@/components/InstagramGrid";
 import VisitUs from "@/components/VisitUs";
 import CtaBand from "@/components/CtaBand";
 import Slashed from "@/components/Slashed";
-import TodoTag from "@/components/TodoTag";
 import {
   business,
   plans,
@@ -22,7 +20,6 @@ import {
   reviews,
   stats,
   strengthClassic,
-  trainers,
   whyChooseUs,
 } from "@/lib/data";
 
@@ -158,9 +155,6 @@ export default function HomePage() {
               <PlanCard key={plan.id} plan={plan} />
             ))}
           </div>
-          <div className="mt-5">
-            <TodoTag note="Prices follow the current offer poster; confirm with the client whether they are limited-time prices." />
-          </div>
           <div className="mt-8">
             <Link href="/pricing" className="btn-outline">
               See full gym membership plans in Coimbatore
@@ -191,27 +185,6 @@ export default function HomePage() {
             <a href={business.mapsUrl} target="_blank" rel="noopener" className="btn-outline">
               Read all reviews on Google
             </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Trainers strip */}
-      <section className="border-t border-line">
-        <div className="container-jp py-20 md:py-28">
-          <Reveal>
-            <SectionHeader
-              eyebrow="Trainers"
-              title="MEET THE TRAINERS"
-              sub="6+ certified trainers coach members one-on-one, every session."
-            />
-          </Reveal>
-          <div className="mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4">
-            {trainers.map((trainer, index) => (
-              <TrainerCard key={index} trainer={trainer} index={index} />
-            ))}
-          </div>
-          <div className="mt-4">
-            <TodoTag note="Trainer names, photos and specialisations come from the client (open item 4)." />
           </div>
         </div>
       </section>

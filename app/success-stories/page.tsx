@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Play } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import TransformationGrid from "@/components/TransformationGrid";
 import TestimonialCard from "@/components/TestimonialCard";
@@ -7,7 +6,6 @@ import SectionHeader from "@/components/SectionHeader";
 import Reveal from "@/components/Reveal";
 import CtaBand from "@/components/CtaBand";
 import Slashed from "@/components/Slashed";
-import TodoTag from "@/components/TodoTag";
 import { business, reviews } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -61,41 +59,6 @@ export default function SuccessStoriesPage() {
             <a href={business.reviewUrl} target="_blank" rel="noopener" className="btn-outline">
               Write a review
             </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Reels row */}
-      <section className="border-t border-line">
-        <div className="container-jp py-16 md:py-24">
-          <Reveal>
-            <SectionHeader
-              eyebrow="On Instagram"
-              title="WATCH THE REELS"
-              sub="Training clips and member moments, straight from our Instagram."
-            />
-          </Reveal>
-          <div className="mt-10 grid max-w-3xl gap-5 sm:grid-cols-3">
-            {[1, 2, 3].map((n) => (
-              <a
-                key={n}
-                href={business.instagramUrl}
-                target="_blank"
-                rel="noopener"
-                aria-label={`Watch JP Fitness reel ${n} on Instagram`}
-                className="group relative flex aspect-[9/16] items-center justify-center overflow-hidden rounded-lg border border-line bg-surface transition-colors hover:border-brand"
-              >
-                <span className="absolute inset-x-0 top-4 px-4 text-center text-xs text-muted">
-                  Reel {n}: TODO pick with client
-                </span>
-                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-brand text-white">
-                  <Play className="ml-0.5 h-5 w-5" aria-hidden="true" />
-                </span>
-              </a>
-            ))}
-          </div>
-          <div className="mt-4">
-            <TodoTag note="Pick 3 reels with the client; thumbnails link out to Instagram, no embeds." />
           </div>
         </div>
       </section>
