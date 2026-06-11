@@ -1,28 +1,20 @@
-"use client";
-
 import Link from "next/link";
-import { m } from "motion/react";
 import { Star } from "lucide-react";
 import { business } from "@/lib/data";
 import Slashed from "@/components/Slashed";
 
-const child = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } },
-};
-
-const wordParent = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.06 } },
-};
-
-const word = {
-  hidden: { opacity: 0, y: 18 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" as const } },
-};
+/**
+ * Hero load sequence runs on pure CSS animations (see globals.css), so the H1
+ * paints with the first frame and LCP never waits for hydration. Words stagger
+ * 60ms apart via animation-delay; prefers-reduced-motion disables it all.
+ */
 
 const LINE_ONE = ["TRANSFORM", "YOUR", "BODY."];
 const LINE_TWO = ["BUILD", "YOUR"];
+const WORD_STAGGER = 0.06;
+const H1_WORDS = LINE_ONE.length + LINE_TWO.length + 1;
+
+const delay = (seconds: number) => ({ animationDelay: `${seconds.toFixed(2)}s` });
 
 export default function Hero() {
   return (
@@ -40,61 +32,64 @@ export default function Hero() {
       />
 
       <div className="container-jp relative z-10 pb-24 pt-32 md:pt-36">
-        <m.div
-          className="max-w-3xl"
-          initial="hidden"
-          animate="visible"
-          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.07 } } }}
-        >
-          <m.p
-            variants={child}
-            className="text-xs font-semibold uppercase tracking-[0.22em] text-muted sm:text-sm"
-          >
+        <div className="max-w-3xl">
+          <p className="animate-fade-up text-xs font-semibold uppercase tracking-[0.22em] text-muted sm:text-sm">
             Unisex gym &middot; Kalapatti, Coimbatore
-          </m.p>
+          </p>
 
-          <m.h1
-            variants={wordParent}
-            className="display-heading mt-5 text-[clamp(2.5rem,7vw,5rem)] leading-[1.04] text-white"
-          >
+          <h1 className="display-heading mt-5 text-[clamp(2.5rem,7vw,5rem)] leading-[1.04] text-white">
             <span className="block">
-              {LINE_ONE.map((w) => (
-                <m.span key={w} variants={word} className="mr-[0.28em] inline-block">
+              {LINE_ONE.map((w, i) => (
+                <span
+                  key={w}
+                  className="animate-rise mr-[0.28em] inline-block"
+                  style={delay(0.05 + i * WORD_STAGGER)}
+                >
                   {w}
-                </m.span>
+                </span>
               ))}
             </span>
             <span className="block">
-              {LINE_TWO.map((w) => (
-                <m.span key={w} variants={word} className="mr-[0.28em] inline-block">
+              {LINE_TWO.map((w, i) => (
+                <span
+                  key={w}
+                  className="animate-rise mr-[0.28em] inline-block"
+                  style={delay(0.05 + (LINE_ONE.length + i) * WORD_STAGGER)}
+                >
                   {w}
-                </m.span>
+                </span>
               ))}
-              <m.span variants={word} className="inline-block">
+              <span
+                className="animate-rise inline-block"
+                style={delay(0.05 + (H1_WORDS - 1) * WORD_STAGGER)}
+              >
                 <Slashed>CONFIDENCE.</Slashed>
-              </m.span>
+              </span>
             </span>
-          </m.h1>
+          </h1>
 
-          <m.p variants={child} className="mt-6 max-w-xl text-base leading-[1.7] text-muted md:text-lg">
+          <p
+            className="animate-fade-up mt-6 max-w-xl text-base leading-[1.7] text-muted md:text-lg"
+            style={delay(0.2)}
+          >
             A unisex gym on Kalapatti Main Road with modern equipment, certified
             trainers and customised programs for weight loss and weight gain.
-          </m.p>
+          </p>
 
-          <m.div variants={child} className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="animate-fade-up mt-8 flex flex-col gap-3 sm:flex-row" style={delay(0.3)}>
             <a href={business.whatsappHref} target="_blank" rel="noopener" className="btn-brand">
               Start with a free visit
             </a>
             <Link href="/pricing" className="btn-outline">
               View membership plans
             </Link>
-          </m.div>
+          </div>
 
-          <m.div
-            variants={child}
-            className="mt-10 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-muted"
+          <div
+            className="animate-fade-up mt-10 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-muted"
+            style={delay(0.4)}
           >
-            <span className="flex items-center gap-1.5 font-medium text-white">
+            <span className="flex items-center gap-1.5 font-semibold text-white">
               <Star className="h-4 w-4 fill-brand text-brand" aria-hidden="true" />
               {business.rating.value} on Google
             </span>
@@ -102,8 +97,8 @@ export default function Hero() {
             <span>{business.rating.count}+ reviews</span>
             <span aria-hidden="true">&middot;</span>
             <span>6+ certified trainers</span>
-          </m.div>
-        </m.div>
+          </div>
+        </div>
       </div>
     </section>
   );

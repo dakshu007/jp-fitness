@@ -23,7 +23,7 @@ export default function Faq() {
                   {" "}
                   <Link
                     href={faq.link.href}
-                    className="font-medium text-white underline decoration-brand decoration-2 underline-offset-4 hover:text-white/80"
+                    className="font-semibold text-white underline decoration-brand decoration-2 underline-offset-4 hover:text-white/80"
                   >
                     {faq.link.label}
                   </Link>

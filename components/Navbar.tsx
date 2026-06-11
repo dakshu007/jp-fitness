@@ -86,7 +86,7 @@ export default function Navbar() {
       }`}
     >
       <nav className="container-jp flex h-16 items-center justify-between md:h-20" aria-label="Main">
-        <Link href="/" className="flex min-h-[44px] items-center gap-2.5" aria-label="JP Fitness home">
+        <Link href="/" className="flex min-h-[44px] items-center gap-2.5">
           <span
             className="flex h-9 w-9 items-center justify-center rounded-md bg-brand font-display text-lg leading-none text-white"
             aria-hidden="true"
@@ -102,7 +102,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               aria-current={isActive(link.href) ? "page" : undefined}
-              className={`py-2 text-sm font-medium transition-colors ${
+              className={`py-2 text-sm font-semibold transition-colors ${
                 isActive(link.href) ? "text-brand" : "text-white/80 hover:text-white"
               }`}
             >

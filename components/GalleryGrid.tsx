@@ -29,7 +29,7 @@ export default function GalleryGrid() {
               setOpenIndex(null);
             }}
             aria-pressed={filter === category.id}
-            className={`h-11 rounded-full border px-5 text-sm font-medium transition-colors ${
+            className={`h-11 rounded-full border px-5 text-sm font-semibold transition-colors ${
               filter === category.id
                 ? "border-brand bg-brand text-white"
                 : "border-line bg-transparent text-muted hover:border-brand hover:text-white"

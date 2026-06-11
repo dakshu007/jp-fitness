@@ -47,6 +47,7 @@ export default function PricingPage() {
       {/* Plans */}
       <section>
         <div className="container-jp py-16 md:py-24">
+          <h2 className="sr-only">Membership plans and prices</h2>
           <div className="grid gap-5 pt-3 md:grid-cols-3 md:gap-6">
             {plans.map((plan) => (
               <PlanCard key={plan.id} plan={plan} large />

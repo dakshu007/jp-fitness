@@ -14,7 +14,7 @@ export default function TestimonialCard({ review }: { review: Review }) {
         {review.text}
       </blockquote>
       <figcaption className="mt-4 flex flex-wrap items-center justify-between gap-2 border-t border-line pt-4">
-        <span className="text-sm font-medium text-white">{review.name}</span>
+        <span className="text-sm font-semibold text-white">{review.name}</span>
         <span className="text-xs text-muted">Google review</span>
       </figcaption>
       {review.todo ? (

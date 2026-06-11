@@ -77,6 +77,48 @@
   }
 }
 
+/* Hero load sequence: pure CSS so the H1 paints immediately, no JS needed.
+   LCP stays fast because animation starts at first paint. */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  opacity: 0;
+  animation: fade-up 0.5s ease-out forwards;
+}
+
+/* Transform-only rise for the H1 words: text stays painted from the first
+   frame (instant LCP), it just settles upward. */
+@keyframes rise {
+  from {
+    transform: translateY(18px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animate-rise {
+  animation: rise 0.45s ease-out backwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-rise {
+    opacity: 1;
+    animation: none;
+    transform: none;
+  }
+}
+
 /* Signature chevron marquee strip */
 @keyframes marquee-scroll {
   from {

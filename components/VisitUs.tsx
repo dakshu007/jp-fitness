@@ -30,13 +30,13 @@ export default function VisitUs() {
               <caption className="sr-only">JP Fitness opening hours by day</caption>
               <thead>
                 <tr className="border-b border-line text-left">
-                  <th scope="col" className="py-3 pr-4 font-medium text-muted">
+                  <th scope="col" className="py-3 pr-4 font-semibold text-muted">
                     Days
                   </th>
-                  <th scope="col" className="py-3 pr-4 font-medium text-muted">
+                  <th scope="col" className="py-3 pr-4 font-semibold text-muted">
                     Morning
                   </th>
-                  <th scope="col" className="py-3 font-medium text-muted">
+                  <th scope="col" className="py-3 font-semibold text-muted">
                     Evening
                   </th>
                 </tr>
@@ -44,7 +44,7 @@ export default function VisitUs() {
               <tbody>
                 {hours.map((row) => (
                   <tr key={row.days} className="border-b border-line">
-                    <th scope="row" className="py-3 pr-4 text-left font-medium text-white">
+                    <th scope="row" className="py-3 pr-4 text-left font-semibold text-white">
                       {row.days}
                     </th>
                     <td className="py-3 pr-4 text-muted">{row.morning}</td>
@@ -67,7 +67,7 @@ export default function VisitUs() {
                 </span>
               ))}
             </address>
-            <p className="mt-3 text-sm font-medium text-white">{business.landmark}</p>
+            <p className="mt-3 text-sm font-semibold text-white">{business.landmark}</p>
             <a
               href={business.phoneHref}
               className="mt-4 inline-block py-1 text-base font-semibold text-white hover:text-white/80"

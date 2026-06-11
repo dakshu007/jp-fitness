@@ -69,7 +69,7 @@ export default function Footer() {
             <dl className="mt-4 space-y-4 text-sm">
               {hours.map((row) => (
                 <div key={row.days}>
-                  <dt className="font-medium text-white">{row.days}</dt>
+                  <dt className="font-semibold text-white">{row.days}</dt>
                   <dd className="mt-1 text-muted">
                     {row.morning}
                     <br />
@@ -93,7 +93,7 @@ export default function Footer() {
             </address>
             <a
               href={business.phoneHref}
-              className="mt-3 inline-block py-1 text-sm font-medium text-white hover:text-white/80"
+              className="mt-3 inline-block py-1 text-sm font-semibold text-white hover:text-white/80"
             >
               {business.phoneDisplay}
             </a>
