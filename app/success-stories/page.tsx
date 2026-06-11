@@ -47,9 +47,9 @@ export default function SuccessStoriesPage() {
               sub={`Every quote below comes from our public Google listing, rated ${business.rating.value} across ${business.rating.count} reviews.`}
             />
           </Reveal>
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-5 sm:grid-cols-2">
             {reviews.map((review, index) => (
-              <Reveal key={index} className="h-full" delay={(index % 3) * 0.05}>
+              <Reveal key={index} className="h-full" delay={(index % 2) * 0.05}>
                 <TestimonialCard review={review} />
               </Reveal>
             ))}

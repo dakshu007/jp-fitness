@@ -197,41 +197,21 @@ export function planWaLink(plan: Plan): string {
 
 export interface Review {
   text: string;
-  name: string;
-  /** True until Bala replaces the card with verbatim review text + first name from the Google listing. */
-  todo: boolean;
 }
 
+/** Review themes from the public Google listing. */
 export const reviews: Review[] = [
   {
     text: "Well-maintained equipment and a motivating environment. Trainer John gives personalised attention and corrects form.",
-    name: "TODO: reviewer first name",
-    todo: true,
   },
   {
     text: "All machines and the gym are new.",
-    name: "TODO: reviewer first name",
-    todo: true,
   },
   {
     text: "Great equipment and a motivating atmosphere.",
-    name: "TODO: reviewer first name",
-    todo: true,
   },
   {
     text: "Excellent ambience.",
-    name: "TODO: reviewer first name",
-    todo: true,
-  },
-  {
-    text: "TODO: copy verbatim review text from the Google listing.",
-    name: "TODO: reviewer first name",
-    todo: true,
-  },
-  {
-    text: "TODO: copy verbatim review text from the Google listing.",
-    name: "TODO: reviewer first name",
-    todo: true,
   },
 ];
 

@@ -180,9 +180,9 @@ export default function HomePage() {
               sub={`${business.rating.value} from ${business.rating.count} public reviews on Google.`}
             />
           </Reveal>
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {reviews.slice(0, 6).map((review, index) => (
-              <Reveal key={index} className="h-full" delay={(index % 3) * 0.05}>
+          <div className="mt-12 grid gap-5 sm:grid-cols-2">
+            {reviews.map((review, index) => (
+              <Reveal key={index} className="h-full" delay={(index % 2) * 0.05}>
                 <TestimonialCard review={review} />
               </Reveal>
             ))}
