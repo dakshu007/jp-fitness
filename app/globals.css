@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #e42439; /* logo red: CTAs, highlights, accents only */
+  --color-brand-dark: #b81c2d; /* hover state for red elements */
+  --color-ink: #0a0a0a; /* page background */
+  --color-surface: #161616; /* cards, raised sections */
+  --color-line: #262626; /* borders, dividers */
+  --color-muted: #9ca3af; /* secondary text on ink */
+  --color-muted-bright: #b5bac3; /* secondary text on surface */
+  --color-whatsapp: #25d366;
+
+  --font-display: var(--font-anton), "Arial Narrow", "Helvetica Neue", sans-serif;
+  --font-body: var(--font-inter), system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    @apply bg-ink font-body text-white antialiased;
+  }
+
+  ::selection {
+    background-color: var(--color-brand);
+    color: #ffffff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+  }
+
+  dialog::backdrop {
+    background-color: rgb(0 0 0 / 0.85);
+  }
+}
+
+@layer components {
+  .btn-brand,
+  .btn-outline,
+  .btn-white-outline,
+  .btn-ink {
+    @apply inline-flex h-12 items-center justify-center gap-2 rounded-[6px] px-6 text-center text-sm font-semibold transition-colors duration-200;
+  }
+
+  .btn-brand {
+    @apply bg-brand text-white hover:bg-brand-dark;
+  }
+
+  .btn-outline {
+    @apply border border-line bg-transparent text-white hover:border-brand;
+  }
+
+  .btn-white-outline {
+    @apply border-2 border-white bg-transparent text-white hover:bg-white hover:text-brand-dark;
+  }
+
+  .btn-ink {
+    @apply bg-ink text-white hover:bg-black;
+  }
+
+  .container-jp {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6;
+  }
+
+  .display-heading {
+    @apply font-display uppercase tracking-[0.01em];
+  }
+}
+
+/* Signature chevron marquee strip */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee-scroll 30s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation-play-state: paused;
+  }
+}
+
+/* Hide native disclosure markers on styled <details> accordions */
+summary.faq-summary {
+  list-style: none;
+}
+
+summary.faq-summary::-webkit-details-marker {
+  display: none;
+}
