@@ -345,12 +345,13 @@ export const galleryPhotos: GalleryPhoto[] = [
   { id: "gym-17", src: "/images/gallery/gym-17.webp", width: 576, height: 1020, category: "floor", alt: "Evening view of the JP Fitness machine floor" },
 ];
 
-/** Hero background: the gym's own training floor. */
+/** Hero background: the gym's own training floor (extra-compressed copy; the
+ * ink overlay hides the compression, and a small file keeps LCP fast). */
 export const heroPhoto: Photo = {
   id: "hero",
-  src: "/images/gallery/gym-04.webp",
-  width: 765,
-  height: 1020,
+  src: "/images/hero-main.webp",
+  width: 700,
+  height: 933,
   alt: "Training floor with red LED lighting and turf strip at JP Fitness gym in Kalapatti, Coimbatore",
 };
 
