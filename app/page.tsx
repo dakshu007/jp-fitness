@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Trophy } from "lucide-react";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
 import StatCounter from "@/components/StatCounter";
@@ -21,6 +21,7 @@ import {
   programs,
   reviews,
   stats,
+  strengthClassic,
   trainers,
   whyChooseUs,
 } from "@/lib/data";
@@ -37,6 +38,27 @@ export default function HomePage() {
     <>
       <Hero />
       <Marquee />
+
+      {/* Upcoming event banner */}
+      <section className="border-b border-line bg-surface" aria-label="Upcoming event">
+        <div className="container-jp flex flex-col gap-4 py-6 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex items-center gap-4">
+            <Trophy className="h-8 w-8 shrink-0 text-brand" aria-hidden="true" />
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted">
+                Upcoming event
+              </p>
+              <p className="mt-1 font-semibold text-white">
+                {strengthClassic.name}: bench press and deadlift championship ·{" "}
+                {strengthClassic.dateDisplay}, {strengthClassic.venue}
+              </p>
+            </div>
+          </div>
+          <Link href="/events" className="btn-brand shrink-0">
+            Event details
+          </Link>
+        </div>
+      </section>
 
       {/* Stats band */}
       <section className="border-b border-line" aria-label="JP Fitness in numbers">

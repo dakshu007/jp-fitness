@@ -1,10 +1,11 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { galleryCategories, galleryImages, type GalleryCategory } from "@/lib/data";
+import Image from "next/image";
+import { galleryCategories, galleryPhotos, type GalleryCategory } from "@/lib/data";
 import Lightbox from "@/components/Lightbox";
 
-/** Filterable masonry grid (CSS columns) with a custom lightbox. */
+/** Filterable masonry grid (CSS columns) of the gym's real photos, with lightbox. */
 export default function GalleryGrid() {
   const [filter, setFilter] = useState<GalleryCategory["id"]>("all");
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -12,8 +13,8 @@ export default function GalleryGrid() {
   const visible = useMemo(
     () =>
       filter === "all"
-        ? galleryImages
-        : galleryImages.filter((image) => image.category === filter),
+        ? galleryPhotos
+        : galleryPhotos.filter((photo) => photo.category === filter),
     [filter]
   );
 
@@ -41,24 +42,27 @@ export default function GalleryGrid() {
       </div>
 
       <div className="mt-10 columns-1 gap-4 sm:columns-2 lg:columns-3">
-        {visible.map((image, index) => (
+        {visible.map((photo, index) => (
           <button
-            key={image.id}
+            key={photo.id}
             type="button"
             onClick={() => setOpenIndex(index)}
-            aria-label={`Open photo: ${image.alt}`}
-            className="group mb-4 block w-full break-inside-avoid"
+            aria-label={`Open photo: ${photo.alt}`}
+            className="group relative mb-4 block w-full break-inside-avoid"
           >
-            <div
-              className={`relative flex w-full items-center justify-center overflow-hidden rounded-lg border border-line bg-surface transition-colors group-hover:border-brand ${image.aspect}`}
-            >
-              <span className="max-w-[85%] px-4 text-center text-xs leading-relaxed text-muted">
-                {image.label}
-              </span>
-              <span className="absolute bottom-3 left-3 rounded bg-ink/80 px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-muted-bright">
-                {image.category}
-              </span>
-            </div>
+            <span className="block overflow-hidden rounded-lg border border-line transition-colors group-hover:border-brand">
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                width={photo.width}
+                height={photo.height}
+                sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 92vw"
+                className="h-auto w-full"
+              />
+            </span>
+            <span className="absolute bottom-3 left-3 rounded bg-ink/80 px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-muted-bright">
+              {galleryCategories.find((c) => c.id === photo.category)?.label}
+            </span>
           </button>
         ))}
       </div>

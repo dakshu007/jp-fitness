@@ -1,5 +1,6 @@
+import Image from "next/image";
 import { MapPin } from "lucide-react";
-import { business, hours } from "@/lib/data";
+import { buildingPhoto, business, hours } from "@/lib/data";
 import SectionHeader from "@/components/SectionHeader";
 import MapFacade from "@/components/MapFacade";
 import Reveal from "@/components/Reveal";
@@ -80,6 +81,19 @@ export default function VisitUs() {
                 Get directions
               </a>
             </div>
+            <div className="mt-8 overflow-hidden rounded-lg border border-line">
+              <Image
+                src={buildingPhoto.src}
+                alt={buildingPhoto.alt}
+                width={buildingPhoto.width}
+                height={buildingPhoto.height}
+                sizes="(min-width: 768px) 45vw, 92vw"
+                className="h-auto w-full"
+              />
+            </div>
+            <p className="mt-3 text-xs text-muted">
+              Spot the red JP Fitness board above Grace and Bakes.
+            </p>
           </Reveal>
         </div>
 

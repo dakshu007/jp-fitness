@@ -1,11 +1,12 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
-import type { GalleryImage } from "@/lib/data";
+import type { Photo } from "@/lib/data";
 
 interface LightboxProps {
-  items: GalleryImage[];
+  items: Photo[];
   index: number | null;
   onClose: () => void;
   onNavigate: (next: number) => void;
@@ -47,16 +48,19 @@ export default function Lightbox({ items, index, onClose, onNavigate }: Lightbox
       onClick={(event) => {
         if (event.target === dialogRef.current) onClose();
       }}
-      aria-label="Gallery photo viewer"
+      aria-label="Photo viewer"
       className="m-auto w-[min(92vw,56rem)] bg-transparent p-0"
     >
       {current ? (
         <div className="relative">
-          <div className="flex aspect-[4/3] max-h-[75vh] w-full items-center justify-center rounded-lg border border-line bg-surface">
-            <span className="max-w-md px-6 text-center text-sm leading-relaxed text-muted">
-              {current.label} ({current.alt})
-            </span>
-          </div>
+          <Image
+            src={current.src}
+            alt={current.alt}
+            width={current.width}
+            height={current.height}
+            sizes="92vw"
+            className="mx-auto h-auto max-h-[76vh] w-auto max-w-full rounded-lg border border-line bg-surface object-contain"
+          />
 
           <div className="mt-3 flex items-center justify-between gap-4">
             <p className="text-sm text-muted-bright">{current.alt}</p>
@@ -69,7 +73,7 @@ export default function Lightbox({ items, index, onClose, onNavigate }: Lightbox
             type="button"
             onClick={onClose}
             aria-label="Close photo viewer"
-            className="absolute -top-3 right-3 flex h-11 w-11 -translate-y-full items-center justify-center rounded-full bg-surface text-white ring-1 ring-line transition-colors hover:bg-brand"
+            className="absolute right-3 top-3 flex h-11 w-11 items-center justify-center rounded-full bg-ink/80 text-white ring-1 ring-line transition-colors hover:bg-brand"
           >
             <X className="h-5 w-5" aria-hidden="true" />
           </button>

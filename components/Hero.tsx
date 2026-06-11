@@ -1,6 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Star } from "lucide-react";
-import { business } from "@/lib/data";
+import { business, heroPhoto } from "@/lib/data";
 import Slashed from "@/components/Slashed";
 
 /**
@@ -19,11 +20,17 @@ const delay = (seconds: number) => ({ animationDelay: `${seconds.toFixed(2)}s` }
 export default function Hero() {
   return (
     <section className="relative flex min-h-svh items-center">
-      {/* hero-main.jpg placeholder: swap for next/image with priority once the client photo arrives */}
-      <div className="absolute inset-0 overflow-hidden bg-surface" aria-hidden="true">
-        <span className="absolute right-4 top-24 rounded border border-line bg-ink/70 px-3 py-1.5 text-xs text-muted">
-          Photo: gym floor. TODO: hero-main.jpg (1920x1080) from client
-        </span>
+      {/* The gym's own training floor as the hero backdrop */}
+      <div className="absolute inset-0 overflow-hidden bg-surface">
+        <Image
+          src={heroPhoto.src}
+          alt={heroPhoto.alt}
+          fill
+          priority
+          fetchPriority="high"
+          sizes="100vw"
+          className="object-cover"
+        />
       </div>
       {/* Ink-to-transparent overlay for text legibility */}
       <div

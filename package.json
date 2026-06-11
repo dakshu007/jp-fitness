@@ -7,7 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "assets": "node scripts/generate-assets.mjs"
+    "assets": "node scripts/import-photos.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.17.0",

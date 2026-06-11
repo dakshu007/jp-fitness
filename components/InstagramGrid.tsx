@@ -1,8 +1,7 @@
+import Image from "next/image";
 import InstagramIcon from "@/components/InstagramIcon";
 import { business, instagramTiles } from "@/lib/data";
-import PlaceholderImage from "@/components/PlaceholderImage";
 import SectionHeader from "@/components/SectionHeader";
-import TodoTag from "@/components/TodoTag";
 import Reveal from "@/components/Reveal";
 
 /** Static tile grid linking to Instagram. No embed scripts, per the performance budget. */
@@ -27,16 +26,18 @@ export default function InstagramGrid() {
                 aria-label={`${tile.alt} (opens Instagram)`}
                 className="group block"
               >
-                <PlaceholderImage
-                  label={tile.label}
-                  className="aspect-square w-full transition-colors group-hover:border-brand"
-                />
+                <span className="relative block aspect-square overflow-hidden rounded-lg border border-line transition-colors group-hover:border-brand">
+                  <Image
+                    src={tile.src}
+                    alt={tile.alt}
+                    fill
+                    sizes="(min-width: 1024px) 16vw, (min-width: 640px) 33vw, 50vw"
+                    className="object-cover"
+                  />
+                </span>
               </a>
             </Reveal>
           ))}
-        </div>
-        <div className="mt-4">
-          <TodoTag note="Save 6 recent posts locally as images (open item 8); tiles link to the profile." />
         </div>
         <div className="mt-8 flex justify-center">
           <a href={business.instagramUrl} target="_blank" rel="noopener" className="btn-outline">

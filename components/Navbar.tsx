@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, m } from "motion/react";
@@ -87,12 +88,14 @@ export default function Navbar() {
     >
       <nav className="container-jp flex h-16 items-center justify-between md:h-20" aria-label="Main">
         <Link href="/" className="flex min-h-[44px] items-center gap-2.5">
-          <span
-            className="flex h-9 w-9 items-center justify-center rounded-md bg-brand font-display text-lg leading-none text-white"
-            aria-hidden="true"
-          >
-            JP
-          </span>
+          <Image
+            src={business.logoSrc}
+            alt=""
+            width={40}
+            height={40}
+            priority
+            className="h-10 w-10 rounded-md"
+          />
           <span className="display-heading text-xl tracking-[0.05em]">JP FITNESS</span>
         </Link>
 
@@ -140,12 +143,13 @@ export default function Navbar() {
           >
             <div className="container-jp flex h-16 shrink-0 items-center justify-between">
               <span className="flex items-center gap-2.5">
-                <span
-                  className="flex h-9 w-9 items-center justify-center rounded-md bg-brand font-display text-lg leading-none text-white"
-                  aria-hidden="true"
-                >
-                  JP
-                </span>
+                <Image
+                  src={business.logoSrc}
+                  alt=""
+                  width={40}
+                  height={40}
+                  className="h-10 w-10 rounded-md"
+                />
                 <span className="display-heading text-xl tracking-[0.05em]">JP FITNESS</span>
               </span>
               <button

@@ -15,12 +15,13 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2.5">
-              <span
-                className="flex h-9 w-9 items-center justify-center rounded-md bg-brand font-display text-lg leading-none text-white"
-                aria-hidden="true"
-              >
-                JP
-              </span>
+              <Image
+                src={business.logoSrc}
+                alt=""
+                width={40}
+                height={40}
+                className="h-10 w-10 rounded-md"
+              />
               <span className="display-heading text-xl tracking-[0.05em]">JP FITNESS</span>
             </div>
             <p className="mt-4 max-w-xs text-sm leading-[1.7] text-muted">

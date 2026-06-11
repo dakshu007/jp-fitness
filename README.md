@@ -24,42 +24,42 @@ npm run assets    # regenerate placeholder icons + OG image (sharp)
 
 ## Editing content
 
-**All copy and data live in [`lib/data.ts`](./lib/data.ts).** Components only render that data. To change prices, hours, reviews, trainers, FAQs or links, edit `lib/data.ts` and redeploy. Per-page meta titles/descriptions live in each `app/**/page.tsx`.
+**All copy and data live in [`lib/data.ts`](./lib/data.ts).** Components only render that data. To change prices, hours, reviews, trainers, FAQs, photos or the event details, edit `lib/data.ts` and redeploy. Per-page meta titles/descriptions live in each `app/**/page.tsx`.
 
 When the custom domain is purchased, change `SITE_URL` in `lib/data.ts` (used by metadata, sitemap, robots and JSON-LD).
 
-## Replacing placeholder images
+## Pages
 
-Placeholders are dark blocks with visible labels, sized exactly like the real images, so layouts will not shift. Source originals from the client via WhatsApp/Drive (never Instagram downloads or Google Images). Compress before commit (hero < 250KB, others < 150KB).
+Home `/`, Pricing `/pricing`, Success Stories `/success-stories`, Achievements `/achievements`, Gallery `/gallery`, **Events `/events`** (JP Strength Classic 2026 championship, all facts from the client's official poster, SportsEvent schema included).
 
-| Path (under `public/images/`) | Size | Used in |
-|---|---|---|
-| hero-main.jpg | 1920x1080 | Home hero (`components/Hero.tsx`) |
-| trainers/trainer-1..6.jpg | 800x1000 | Trainer cards |
-| transformations/client-N-before/-after.jpg | 800x1000 | Before/after sliders (**written consent required**) |
-| gallery/gallery-01..16.jpg | 1200x900 | Gallery grid (`lib/data.ts` array) |
-| insta/insta-1..6.jpg | 800x800 | Instagram grid |
-| app-mockup.png | 600x1200 | App section |
-| og-image.jpg | 1200x630 | Social sharing (placeholder generated) |
-| logo.svg / logo.png | vector / 512px | Navbar + icons (placeholder "JP" mark generated) |
+## Images
+
+Real client photos were imported on 12 June 2026 via `scripts/import-photos.mjs` (sources in `~/Downloads`; converted to webp with sharp):
+
+- `public/images/logo.png` — client logo (92px master with dark background; navbar, footer, favicon, app icons, OG image all derive from it)
+- `public/images/gallery/gym-*.webp` + `meetup-*.webp` — 21 gallery photos (also used for hero, Instagram tiles and the Visit Us building shot)
+- `public/images/transformations/*.webp` — 13 member before/after collages (**confirm written member consent is on file with the client**)
+- `public/images/events/jp-strength-classic-2026.webp` — championship poster
+
+Still placeholders (visible TODO tags on site): trainer photos, founder photo, app phone mockup.
 
 ## ⚠️ Flags raised during the build (do not resolve silently)
 
 1. **Hours conflict:** the site uses client-provided hours (Mon-Sat 5-11 AM and 5-9:30 PM, Sun 5 AM-12 PM), but the Google Business Profile currently shows different hours. The client must update the Google listing to match; mismatched hours hurt local rankings and trust.
 2. **Pricing:** ₹4,999 / ₹6,999 / ₹9,999 come from a poster labelled "Limited time special offer". Confirm whether these are permanent. Never invent a regular/strike-through price.
 
-## Open items blocking launch (not blocking build)
+## Open items (remaining)
 
-1. Transparent logo file (SVG or 512px+ PNG)
+1. Larger transparent logo master (current file is 92px with a baked-in background; fine at navbar size, soft at 512px icon size)
 2. Confirm hours and update Google Business Profile (see flag above)
 3. Confirm whether plan prices are permanent or offer prices
 4. Trainer names, photos, specialisations (6+); confirm "John" spelling
 5. Verbatim Google review texts + reviewer first names
-6. Transformation photos **with written member consent**
+6. Written member consent on file for the published transformation photos
 7. Founder name, bio, competition history (Achievements page)
-8. 16+ gym photos (originals, not Instagram downloads)
-9. Domain decision (suggest jpfitnesskalapatti.com or jpfitness.in) → update `SITE_URL`
-10. iOS App Store link, if one exists
-11. Optional: member count stat if the client wants one
+8. Domain decision (suggest jpfitnesskalapatti.com or jpfitness.in) → update `SITE_URL`
+9. iOS App Store link, if one exists
+10. App phone mockup screenshot for the app section
+11. Championship venue announcement → update `strengthClassic.venueNote` in `lib/data.ts`
 
 Everything awaiting client input is marked with a visible red **TODO** tag on the site itself.

@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import { Play } from "lucide-react";
 import PageHero from "@/components/PageHero";
-import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import TransformationGrid from "@/components/TransformationGrid";
 import TestimonialCard from "@/components/TestimonialCard";
 import SectionHeader from "@/components/SectionHeader";
 import Reveal from "@/components/Reveal";
 import CtaBand from "@/components/CtaBand";
 import Slashed from "@/components/Slashed";
 import TodoTag from "@/components/TodoTag";
-import { business, reviews, transformations } from "@/lib/data";
+import { business, reviews } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Client Transformations | JP Fitness Coimbatore",
@@ -27,25 +27,13 @@ export default function SuccessStoriesPage() {
             REAL CLIENT <Slashed>TRANSFORMATIONS</Slashed>
           </>
         }
-        sub="Results from real members of JP Fitness, Coimbatore."
+        sub="Weight loss and weight gain results from real members of JP Fitness, Coimbatore."
       />
 
-      {/* Before/after sliders (consent-gated placeholders) */}
+      {/* Before/after photo wall (client-supplied collages) */}
       <section>
         <div className="container-jp py-16 md:py-24">
-          <div className="rounded-lg border border-dashed border-line bg-surface p-5">
-            <TodoTag note="Transformation photos go live only after each member gives written consent. These slots stay as placeholders until then." />
-          </div>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {transformations.map((transformation, index) => (
-              <Reveal key={transformation.id} delay={index * 0.06}>
-                <BeforeAfterSlider
-                  label={`Member transformation ${index + 1}, before and after comparison. Use arrow keys to move the divider.`}
-                  todoLabel={transformation.todoLabel}
-                />
-              </Reveal>
-            ))}
-          </div>
+          <TransformationGrid />
         </div>
       </section>
 
