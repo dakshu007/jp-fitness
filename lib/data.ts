@@ -45,8 +45,8 @@ export const business = {
   instagramUrl: "https://www.instagram.com/jpfitnesskalapatti/",
   instagramHandle: "@jpfitnesskalapatti",
   playStoreUrl:
-    "https://play.google.com/store/apps/details?id=com.cofox.kahunas.JPFitness",
-  appName: "JP Fitness & Online Coaching",
+    "https://play.google.com/store/apps/details?id=com.ydl.jpfitness&hl=en_IN",
+  appName: "JP Fitness",
   // TODO: ask client if an App Store link exists
   iosAppUrl: null as string | null,
   /** Client's logo (92px source with baked-in dark background). TODO: request a larger transparent master file. */
@@ -353,6 +353,15 @@ export const heroPhoto: Photo = {
   width: 700,
   height: 933,
   alt: "Training floor with red LED lighting and turf strip at JP Fitness gym in Kalapatti, Coimbatore",
+};
+
+/** Screenshot of the JP Fitness app home screen (client-supplied). */
+export const appMockup: Photo = {
+  id: "app-mockup",
+  src: "/images/app-mockup.webp",
+  width: 520,
+  height: 1061,
+  alt: "JP Fitness app home screen with workout tracking, diet tracking, calorie goals, water and weight logging",
 };
 
 /** Street view of the building: the red JP Fitness board above Grace and Bakes. */
