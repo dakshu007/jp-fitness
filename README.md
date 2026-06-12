@@ -2,7 +2,7 @@
 
 Lead-generation website for **JP Fitness**, a unisex gym in Kalapatti, Coimbatore, Tamil Nadu. Rated 5.0 on Google (21 reviews). Every page drives one of three actions: **call**, **WhatsApp**, or **walk in**.
 
-- **Live:** https://jpfitnesskalapatti.netlify.app (jpfitness.netlify.app was already taken by another Netlify account)
+- **Live:** https://jpfitness.co.in (GoDaddy domain → Netlify site `jpfitnesskalapatti`; the bare netlify.app URL redirects here)
 - **Spec:** [JP-FITNESS-SPEC.md](./JP-FITNESS-SPEC.md) (single source of truth for requirements)
 
 ## Stack
@@ -57,7 +57,7 @@ All visible placeholders and TODO tags have been removed from the site (client r
 5. Verbatim Google review texts (review cards currently show listing themes without names)
 6. Written member consent on file for the published transformation photos
 7. Years for the founder's competition wins (timeline markers; titles + medals already live)
-8. Domain decision (suggest jpfitnesskalapatti.com or jpfitness.in) → update `SITE_URL`
+8. ~~Domain decision~~ Done: jpfitness.co.in purchased on GoDaddy, set as the Netlify primary domain
 9. iOS App Store link, if one exists
 10. App phone mockup screenshot for the app section
 11. Championship venue announcement → update `strengthClassic.venueNote` in `lib/data.ts`

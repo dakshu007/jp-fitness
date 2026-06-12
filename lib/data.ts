@@ -17,8 +17,7 @@ import type { LucideIcon } from "lucide-react";
  * 12 June 2026.
  */
 
-/** Replace with the custom domain once purchased (see README, open item 9). */
-export const SITE_URL = "https://jpfitnesskalapatti.netlify.app";
+export const SITE_URL = "https://jpfitness.co.in";
 
 export const business = {
   name: "JP Fitness",
