@@ -49,6 +49,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
   },
+  verification: {
+    google: "PL6l6wNavv8tFdYibcvLcoAo66nIgV897JJdKlGwhZE",
+  },
 };
 
 /** ExerciseGym structured data; facts verified 11 June 2026 (see lib/data.ts). */
