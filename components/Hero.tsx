@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Star } from "lucide-react";
@@ -46,24 +47,26 @@ export default function Hero() {
           <h1 className="display-heading mt-5 text-[clamp(2.5rem,7vw,5rem)] leading-[1.04] text-white">
             <span className="block">
               {LINE_ONE.map((w, i) => (
-                <span
-                  key={w}
-                  className="animate-rise mr-[0.28em] inline-block"
-                  style={delay(0.05 + i * WORD_STAGGER)}
-                >
-                  {w}
-                </span>
+                <Fragment key={w}>
+                  <span
+                    className="animate-rise inline-block"
+                    style={delay(0.05 + i * WORD_STAGGER)}
+                  >
+                    {w}
+                  </span>{" "}
+                </Fragment>
               ))}
             </span>
             <span className="block">
               {LINE_TWO.map((w, i) => (
-                <span
-                  key={w}
-                  className="animate-rise mr-[0.28em] inline-block"
-                  style={delay(0.05 + (LINE_ONE.length + i) * WORD_STAGGER)}
-                >
-                  {w}
-                </span>
+                <Fragment key={w}>
+                  <span
+                    className="animate-rise inline-block"
+                    style={delay(0.05 + (LINE_ONE.length + i) * WORD_STAGGER)}
+                  >
+                    {w}
+                  </span>{" "}
+                </Fragment>
               ))}
               <span
                 className="animate-rise inline-block"
