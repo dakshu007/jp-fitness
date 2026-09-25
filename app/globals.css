@@ -147,3 +147,65 @@ summary.faq-summary {
 summary.faq-summary::-webkit-details-marker {
   display: none;
 }
+
+/* Sticky offer bar: animated red gradient, sweeping shine, pulsing badge */
+.offer-bar {
+  background: linear-gradient(90deg, #7a0f1b, var(--color-brand), #ff4d2e, var(--color-brand), #7a0f1b);
+  background-size: 300% 100%;
+  animation: offer-gradient 8s ease-in-out infinite;
+}
+
+.offer-bar-shine {
+  position: absolute;
+  inset: 0;
+  width: 35%;
+  background: linear-gradient(100deg, transparent, rgb(255 255 255 / 0.28), transparent);
+  transform: translateX(-120%) skewX(-20deg);
+  animation: offer-shine 3.5s ease-in-out infinite;
+}
+
+.offer-bar-pulse {
+  animation: offer-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes offer-gradient {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes offer-shine {
+  0% {
+    transform: translateX(-120%) skewX(-20deg);
+  }
+  60%,
+  100% {
+    transform: translateX(320%) skewX(-20deg);
+  }
+}
+
+@keyframes offer-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgb(255 212 0 / 0.6);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgb(255 212 0 / 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .offer-bar,
+  .offer-bar-shine,
+  .offer-bar-pulse {
+    animation: none;
+  }
+
+  .offer-bar-shine {
+    display: none;
+  }
+}

@@ -437,9 +437,10 @@ export const achievementsTimeline: TimelineEntry[] = [
   },
 ];
 
-/** JP Strength Classic 2026. All facts from the client's official event poster. */
+/** JP Strength Classic 2026. All facts from the client's official event poster. Event is over. */
 export const strengthClassic = {
   name: "JP Strength Classic 2026",
+  status: "closed" as const,
   shortName: "JP STRENGTH CLASSIC 2026",
   tagline: "Open State & Open District Bench Press and Deadlift Championship 2026",
   presenter: "JP Fitness Centre",
@@ -479,4 +480,68 @@ export const strengthClassic = {
 
 export const eventWaLink = waLink(
   "Hi JP Fitness! I want to know about the JP Strength Classic 2026 championship."
+);
+
+/**
+ * Sticky offer bar shown above the navbar on every page.
+ * From the client's "Weight Loss Program" poster (Nehru Nagar, September 2026).
+ */
+export const offerBar = {
+  label: "Limited slots",
+  headline: "Weight Loss Program",
+  price: "₹4,999",
+  suffix: "only",
+  cta: "Claim offer",
+  href: waLink(
+    "Hi JP Fitness! I want to claim the Weight Loss Program offer at ₹4,999. Please share the details."
+  ),
+} as const;
+
+/** JP Fitness 1st Anniversary Fitness Competition. All facts from the client's official poster. */
+export const anniversaryCompetition = {
+  name: "JP Fitness 1st Anniversary Fitness Competition",
+  shortName: "1ST ANNIVERSARY FITNESS COMPETITION",
+  tagline: "Bigger challenges. A stronger community!",
+  eligibility: "Open for all JP Fitness members",
+  dateRangeDisplay: "27 to 28 October 2026",
+  isoStart: "2026-10-27T08:00:00+05:30",
+  isoEnd: "2026-11-03T21:00:00+05:30",
+  categories: [
+    {
+      title: "Men's category",
+      focus: ["Strength", "Endurance", "Control"],
+      events: ["Deadlift", "Dead hang", "Plank", "Push-up"],
+      weightClasses: ["Below 70 kg", "Above 70 kg"],
+    },
+    {
+      title: "Women's category",
+      focus: ["Strength", "Stability", "Endurance"],
+      events: ["Deadlift", "Wall sit", "Plank"],
+      weightClasses: ["Below 70 kg", "Above 70 kg"],
+    },
+  ],
+  schedule: [
+    { dateDisplay: "Tuesday, 27 October", title: "Morning batch", detail: "Competition", timeDisplay: "8:00 AM", kind: "morning" },
+    { dateDisplay: "Tuesday, 27 October", title: "Evening batch", detail: "Competition", timeDisplay: "6:00 PM", kind: "evening" },
+    { dateDisplay: "Wednesday, 28 October", title: "Fun games", detail: "For all members", timeDisplay: "6:00 PM", kind: "games" },
+  ],
+  prizeDistribution: { dateDisplay: "Tuesday, 3 November", timeDisplay: "6:00 PM" },
+  highlights: [
+    "Open for all JP members",
+    "Exciting prizes",
+    "Challenge your limits",
+    "Be a part of our fitness family",
+  ],
+  motto: "Same passion. A stronger you!",
+  poster: {
+    id: "jp-anniversary-competition-2026",
+    src: "/images/events/jp-anniversary-competition-2026.webp",
+    width: 1024,
+    height: 1536,
+    alt: "JP Fitness 1st Anniversary Fitness Competition poster: men's and women's categories below and above 70 kg, competition on 27 October at 8 AM and 6 PM, fun games on 28 October at 6 PM, prize distribution on 3 November at 6 PM",
+  } satisfies Photo,
+} as const;
+
+export const competitionWaLink = waLink(
+  "Hi JP Fitness! I want to register for the 1st Anniversary Fitness Competition."
 );

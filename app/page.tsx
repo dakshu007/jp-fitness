@@ -19,7 +19,7 @@ import {
   programs,
   reviews,
   stats,
-  strengthClassic,
+  anniversaryCompetition,
   whyChooseUs,
 } from "@/lib/data";
 
@@ -46,8 +46,8 @@ export default function HomePage() {
                 Upcoming event
               </p>
               <p className="mt-1 font-semibold text-white">
-                {strengthClassic.name}: bench press and deadlift championship ·{" "}
-                {strengthClassic.dateDisplay}, {strengthClassic.venue}
+                {anniversaryCompetition.name} · {anniversaryCompetition.dateRangeDisplay} ·{" "}
+                {anniversaryCompetition.eligibility}
               </p>
             </div>
           </div>

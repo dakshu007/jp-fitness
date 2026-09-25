@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, m } from "motion/react";
 import { Menu, X } from "lucide-react";
 import { business, navLinks } from "@/lib/data";
+import OfferBar from "@/components/OfferBar";
 
 function normalise(path: string): string {
   return path !== "/" && path.endsWith("/") ? path.slice(0, -1) : path;
@@ -86,6 +87,7 @@ export default function Navbar() {
           : "border-b border-transparent bg-transparent"
       }`}
     >
+      <OfferBar />
       <nav className="container-jp flex h-16 items-center justify-between md:h-20" aria-label="Main">
         <Link href="/" className="flex min-h-[44px] items-center gap-2.5">
           <Image

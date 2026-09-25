@@ -38,7 +38,7 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      <div className="container-jp relative z-10 pb-24 pt-32 md:pt-36">
+      <div className="container-jp relative z-10 pb-24 pt-40 md:pt-44">
         <div className="max-w-3xl">
           <p className="animate-fade-up text-xs font-semibold uppercase tracking-[0.22em] text-muted sm:text-sm">
             Unisex gym &middot; Kalapatti, Coimbatore

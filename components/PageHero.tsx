@@ -11,7 +11,7 @@ interface PageHeroProps {
 export default function PageHero({ eyebrow, title, sub }: PageHeroProps) {
   return (
     <section className="border-b border-line">
-      <div className="container-jp pb-14 pt-32 md:pb-20 md:pt-44">
+      <div className="container-jp pb-14 pt-40 md:pb-20 md:pt-52">
         <SectionEyebrow label={eyebrow} />
         <h1 className="display-heading mt-4 max-w-4xl text-[clamp(2.25rem,6vw,4rem)] leading-[1.05] text-white">
           {title}

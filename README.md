@@ -30,7 +30,9 @@ When the custom domain is purchased, change `SITE_URL` in `lib/data.ts` (used by
 
 ## Pages
 
-Home `/`, Pricing `/pricing`, Success Stories `/success-stories`, Achievements `/achievements`, Gallery `/gallery`, **Events `/events`** (JP Strength Classic 2026 championship, all facts from the client's official poster, SportsEvent schema included).
+Home `/`, Pricing `/pricing`, Success Stories `/success-stories`, Achievements `/achievements`, Gallery `/gallery`, **Events `/events`** (JP Fitness 1st Anniversary Fitness Competition, 27-28 Oct 2026 with prize distribution on 3 Nov, all facts from the client's poster, SportsEvent schema included; the JP Strength Classic 2026 is listed under Past events as closed).
+
+**Sticky offer bar** (`components/OfferBar.tsx`, data in `offerBar` in `lib/data.ts`): Weight Loss Program at ₹4,999, shown above the navbar on every page; tapping it opens WhatsApp with a prefilled claim message.
 
 ## Images
 
@@ -39,7 +41,8 @@ Real client photos were imported on 12 June 2026 via `scripts/import-photos.mjs`
 - `public/images/logo.png` — client logo (92px master with dark background; navbar, footer, favicon, app icons, OG image all derive from it)
 - `public/images/gallery/gym-*.webp` + `meetup-*.webp` — 21 gallery photos (also used for hero, Instagram tiles and the Visit Us building shot)
 - `public/images/transformations/*.webp` — 13 member before/after collages (**confirm written member consent is on file with the client**)
-- `public/images/events/jp-strength-classic-2026.webp` — championship poster
+- `public/images/events/jp-strength-classic-2026.webp` — championship poster (past event)
+- `public/images/events/jp-anniversary-competition-2026.webp` — 1st Anniversary Fitness Competition poster (added 25 Sep 2026)
 
 All visible placeholders and TODO tags have been removed from the site (client request, 12 June 2026). The home trainers strip and the achievements certification cards are hidden until the client supplies real trainer profiles and certification details; restore them from git history when the content arrives.
 
