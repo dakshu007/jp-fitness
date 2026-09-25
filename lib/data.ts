@@ -35,7 +35,7 @@ export const business = {
   ],
   landmark: "4th floor, above Grace and Bakes, near Nehru Nagar signal",
   geo: { lat: 11.0562424, lng: 77.0386703 },
-  rating: { value: "5.0", count: 21 },
+  rating: { value: "5.0", count: 65 },
   mapsUrl:
     "https://www.google.com/maps/place/?q=place_id:ChIJRZBs_5FXqDsRWqSqdEm3JyA",
   reviewUrl:
@@ -94,7 +94,7 @@ export interface Stat {
 
 export const stats: Stat[] = [
   { value: 5, decimals: 1, label: "Google rating" },
-  { value: 21, suffix: "+", label: "Five-star reviews" },
+  { value: 65, suffix: "+", label: "Five-star reviews" },
   { value: 6, suffix: "+", label: "Certified trainers" },
   { value: 7, label: "Days open a week" },
 ];
@@ -169,11 +169,11 @@ export interface Plan {
   best: boolean;
 }
 
-/** Prices from the client's current offer poster. Never invent a strike-through price. */
+/** Membership prices confirmed by the client on 25 September 2026. Never invent a strike-through price. */
 export const plans: Plan[] = [
-  { id: "3-months", duration: "3 months", priceDisplay: "₹4,999", best: false },
-  { id: "6-months", duration: "6 months", priceDisplay: "₹6,999", best: false },
-  { id: "12-months", duration: "12 months", priceDisplay: "₹9,999", best: true },
+  { id: "3-months", duration: "3 months", priceDisplay: "₹5,999", best: false },
+  { id: "6-months", duration: "6 months", priceDisplay: "₹7,999", best: false },
+  { id: "12-months", duration: "12 months", priceDisplay: "₹11,999", best: true },
 ];
 
 export const planInclusions: string[] = [
@@ -219,7 +219,7 @@ export const faqs: Faq[] = [
   {
     question: "How much does a gym membership cost at JP Fitness?",
     answer:
-      "JP Fitness membership costs ₹4,999 for 3 months, ₹6,999 for 6 months and ₹9,999 for 12 months. Every plan includes full gym access, all equipment, trainer guidance and diet guidance.",
+      "JP Fitness membership costs ₹5,999 for 3 months, ₹7,999 for 6 months and ₹11,999 for 12 months. Every plan includes full gym access, all equipment, trainer guidance and diet guidance.",
   },
   {
     question: "Is JP Fitness a unisex gym?",

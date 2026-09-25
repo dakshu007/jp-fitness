@@ -119,7 +119,7 @@ async function main() {
   <text x="343" y="330" font-family="Arial, Helvetica, sans-serif" font-size="36" fill="#FFFFFF">Transform your body. Build your confidence.</text>
   <rect x="340" y="378" width="430" height="64" rx="8" fill="#161616" stroke="${LINE}" stroke-width="1"/>
   <text x="364" y="422" font-family="Arial, Helvetica, sans-serif" font-size="32" fill="#E42439">&#9733;</text>
-  <text x="400" y="422" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#FFFFFF">5.0 on Google &#183; 21+ reviews</text>
+  <text x="400" y="422" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#FFFFFF">5.0 on Google &#183; 65+ reviews</text>
   <text x="340" y="505" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="${MUTED}">Unisex gym &#183; Kalapatti Main Road, Coimbatore</text>
 </svg>`;
   await sharp(Buffer.from(ogSvg))

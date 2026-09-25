@@ -1,6 +1,6 @@
 # JP Fitness — Website
 
-Lead-generation website for **JP Fitness**, a unisex gym in Kalapatti, Coimbatore, Tamil Nadu. Rated 5.0 on Google (21 reviews). Every page drives one of three actions: **call**, **WhatsApp**, or **walk in**.
+Lead-generation website for **JP Fitness**, a unisex gym in Kalapatti, Coimbatore, Tamil Nadu. Rated 5.0 on Google (65+ five-star reviews). Every page drives one of three actions: **call**, **WhatsApp**, or **walk in**.
 
 - **Live:** https://jpfitness.co.in (GoDaddy domain → Netlify site `jpfitnesskalapatti`; the bare netlify.app URL redirects here)
 - **Spec:** [JP-FITNESS-SPEC.md](./JP-FITNESS-SPEC.md) (single source of truth for requirements)
@@ -49,7 +49,7 @@ All visible placeholders and TODO tags have been removed from the site (client r
 ## ⚠️ Flags raised during the build (do not resolve silently)
 
 1. **Hours conflict:** the site uses client-provided hours (Mon-Sat 5-11 AM and 5-9:30 PM, Sun 5 AM-12 PM), but the Google Business Profile currently shows different hours. The client must update the Google listing to match; mismatched hours hurt local rankings and trust.
-2. **Pricing:** ₹4,999 / ₹6,999 / ₹9,999 come from a poster labelled "Limited time special offer". Confirm whether these are permanent. Never invent a regular/strike-through price.
+2. **Pricing:** ₹5,999 (3 months) / ₹7,999 (6 months) / ₹11,999 (12 months), updated by the client on 25 Sep 2026. Never invent a regular/strike-through price.
 
 ## Open items (remaining)
 

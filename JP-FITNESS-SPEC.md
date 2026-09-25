@@ -76,9 +76,9 @@ Trainers:        6+ certified trainers (one trainer named John is praised in rev
 
 | Plan | Price | Notes |
 |---|---|---|
-| 3 months | ₹4,999 | |
-| 6 months | ₹6,999 | |
-| 12 months | ₹9,999 | Mark as "Best value" |
+| 3 months | ₹5,999 | |
+| 6 months | ₹7,999 | |
+| 12 months | ₹11,999 | Mark as "Best value" |
 
 > **PRICING CAUTION:** The poster labels these "Limited time special offer". TODO: confirm with client whether these are permanent prices or offer prices. If offer prices, add an "Offer" badge and ask for the regular prices, or omit strike-through pricing entirely. Never invent a regular price.
 

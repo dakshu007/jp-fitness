@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: "%s",
   },
   description:
-    "Rated 5.0 on Google. Unisex gym on Kalapatti Main Road, Coimbatore with expert trainers, modern equipment and weight loss programs. Plans from ₹4,999.",
+    "65+ five-star Google reviews. Unisex gym on Kalapatti Main Road, Coimbatore with expert trainers, modern equipment and weight loss programs. Plans from ₹5,999.",
   openGraph: {
     siteName: "JP Fitness",
     locale: "en_IN",
@@ -64,7 +64,7 @@ const jsonLd = {
   url: SITE_URL,
   telephone: "+919965972440",
   image: `${SITE_URL}/images/og-image.jpg`,
-  priceRange: "₹4,999 - ₹9,999",
+  priceRange: "₹5,999 - ₹11,999",
   address: {
     "@type": "PostalAddress",
     streetAddress: "DM Complex, 800/6, Kalapatti Main Rd, Indira Nagar, Nehru Nagar West",

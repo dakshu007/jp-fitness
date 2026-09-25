@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Trophy } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
 import StatCounter from "@/components/StatCounter";
@@ -13,20 +13,20 @@ import InstagramGrid from "@/components/InstagramGrid";
 import VisitUs from "@/components/VisitUs";
 import CtaBand from "@/components/CtaBand";
 import Slashed from "@/components/Slashed";
+import EventPopup from "@/components/EventPopup";
 import {
   business,
   plans,
   programs,
   reviews,
   stats,
-  anniversaryCompetition,
   whyChooseUs,
 } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "JP Fitness Kalapatti | Best Unisex Gym in Coimbatore",
   description:
-    "Rated 5.0 on Google. Unisex gym on Kalapatti Main Road, Coimbatore with expert trainers, modern equipment and weight loss programs. Plans from ₹4,999.",
+    "65+ five-star Google reviews. Unisex gym on Kalapatti Main Road, Coimbatore with expert trainers, modern equipment and weight loss programs. Plans from ₹5,999.",
   alternates: { canonical: "/" },
 };
 
@@ -36,26 +36,7 @@ export default function HomePage() {
       <Hero />
       <Marquee />
 
-      {/* Upcoming event banner */}
-      <section className="border-b border-line bg-surface" aria-label="Upcoming event">
-        <div className="container-jp flex flex-col gap-4 py-6 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex items-center gap-4">
-            <Trophy className="h-8 w-8 shrink-0 text-brand" aria-hidden="true" />
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted">
-                Upcoming event
-              </p>
-              <p className="mt-1 font-semibold text-white">
-                {anniversaryCompetition.name} · {anniversaryCompetition.dateRangeDisplay} ·{" "}
-                {anniversaryCompetition.eligibility}
-              </p>
-            </div>
-          </div>
-          <Link href="/events" className="btn-brand shrink-0">
-            Event details
-          </Link>
-        </div>
-      </section>
+      <EventPopup />
 
       {/* Stats band */}
       <section className="border-b border-line" aria-label="JP Fitness in numbers">
@@ -170,8 +151,8 @@ export default function HomePage() {
           <Reveal>
             <SectionHeader
               eyebrow="Testimonials"
-              title="RATED 5.0 BY OUR MEMBERS"
-              sub={`${business.rating.value} from ${business.rating.count} public reviews on Google.`}
+              title={`${business.rating.count}+ FIVE-STAR REVIEWS`}
+              sub={`${business.rating.count}+ five-star reviews on Google.`}
             />
           </Reveal>
           <div className="mt-12 grid gap-5 sm:grid-cols-2">

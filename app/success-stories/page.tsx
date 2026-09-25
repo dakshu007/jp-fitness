@@ -42,7 +42,7 @@ export default function SuccessStoriesPage() {
             <SectionHeader
               eyebrow="Member reviews"
               title="WHAT MEMBERS SAY ON GOOGLE"
-              sub={`Every quote below comes from our public Google listing, rated ${business.rating.value} across ${business.rating.count} reviews.`}
+              sub={`Every quote below comes from our public Google listing, rated ${business.rating.value} across ${business.rating.count}+ five-star reviews.`}
             />
           </Reveal>
           <div className="mt-12 grid gap-5 sm:grid-cols-2">

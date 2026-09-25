@@ -12,7 +12,7 @@ import { faqs, plans, waLink } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Gym Membership Fees in Coimbatore | JP Fitness Plans",
   description:
-    "JP Fitness membership: 3 months ₹4,999, 6 months ₹6,999, 12 months ₹9,999. Unisex gym in Kalapatti, Coimbatore. Call or WhatsApp 99659 72440 to join.",
+    "JP Fitness membership: 3 months ₹5,999, 6 months ₹7,999, 12 months ₹11,999. Unisex gym in Kalapatti, Coimbatore. Call or WhatsApp 99659 72440 to join.",
   alternates: { canonical: "/pricing/" },
 };
 
