@@ -21,3 +21,6 @@ yarn-error.log*
 
 # netlify
 .netlify
+
+# Deploy zips built for manual Netlify upload
+*.zip
